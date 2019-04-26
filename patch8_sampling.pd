@@ -1,4 +1,4 @@
-#N canvas 648 502 550 417 10;
+#N canvas 648 220 550 417 10;
 #X obj 37 57 adc~ 1;
 #X obj 39 340 dac~ 1 2;
 #X text 72 100 < try enveloping the input with an lfo!;
