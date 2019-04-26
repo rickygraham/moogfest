@@ -1,0 +1,7 @@
+#N canvas 879 509 403 180 10;
+#X obj 25 43 adc~ 1;
+#X obj 26 89 *~;
+#X obj 27 130 delwrite~ buffer 1000;
+#X obj 248 76 *~;
+#X obj 249 41 delread~ buffer 50;
+#X obj 248 123 dac~ 1 2;

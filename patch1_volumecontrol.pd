@@ -1,0 +1,23 @@
+#N canvas 879 509 414 226 10;
+#X obj 31 97 osc~;
+#X obj 31 195 dac~ 1 2;
+#X obj 34 23 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 31 60 mtof;
+#X obj 257 140 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 257 165 \; pd dsp \$1;
+#X obj 93 48 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 90 71 / 127;
+#X obj 89 116 line~;
+#X obj 31 153 *~ 1;
+#X text 173 96 task 2: connect up volume control;
+#X msg 89 92 \$1 50;
+#X text 70 153 < delete "1";
+#X connect 0 0 9 0;
+#X connect 2 0 3 0;
+#X connect 3 0 0 0;
+#X connect 4 0 5 0;
+#X connect 9 0 1 0;
+#X connect 9 0 1 1;
