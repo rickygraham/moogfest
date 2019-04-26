@@ -1,36 +1,41 @@
-#N canvas 879 509 385 371 10;
+#N canvas 692 378 385 371 10;
 #X obj 31 337 dac~ 1 2;
 #X obj 34 29 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 0 1;
+-1 -1 6400 1;
 #X obj 31 66 mtof;
 #X obj 219 289 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X msg 219 314 \; pd dsp \$1;
 #X obj 76 213 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 0 1;
+-1 -1 1100 1;
 #X obj 73 236 / 127;
 #X obj 72 281 line~;
 #X obj 31 295 *~;
 #X obj 107 109 osc~;
 #X obj 107 154 *~;
-#X obj 154 78 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 0 1;
+#X obj 155 117 hsl 128 15 20 1000 0 0 empty empty empty -2 -8 0 10
+-262144 -1 -1 12700 1;
 #X obj 31 122 +~;
 #X obj 31 189 osc~;
-#X obj 151 140 * 1000;
-#X obj 151 98 / 127;
-#X text 192 23 task 4: basic fm synth;
+#X text 178 26 task 4: basic fm synth;
 #X msg 72 257 \$1 50;
+#X obj 110 64 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 2000 1;
+#X obj 107 86 expr ($f1 / 127) * 1000;
+#X text 135 247 stuff to try: visualize audio output?;
 #X connect 1 0 2 0;
+#X connect 2 0 12 0;
 #X connect 3 0 4 0;
 #X connect 5 0 6 0;
-#X connect 6 0 17 0;
+#X connect 6 0 15 0;
 #X connect 7 0 8 1;
 #X connect 8 0 0 0;
 #X connect 8 0 0 1;
 #X connect 9 0 10 0;
-#X connect 11 0 15 0;
+#X connect 10 0 12 1;
+#X connect 11 0 10 1;
+#X connect 12 0 13 0;
 #X connect 13 0 8 0;
-#X connect 14 0 10 1;
-#X connect 15 0 14 0;
-#X connect 17 0 7 0;
+#X connect 15 0 7 0;
+#X connect 16 0 17 0;
+#X connect 17 0 9 0;

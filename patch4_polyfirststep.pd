@@ -12,7 +12,7 @@
 #X obj 278 140 makenote 100 1000;
 #X msg 62 109 60;
 #X msg 278 112 62;
-#X obj 510 286 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 510 286 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X msg 510 309 \; pd dsp \$1;
 #X text 100 20 lets turn your computer keyboard into a midi controller
@@ -26,6 +26,9 @@ first....;
 #X obj 493 39 env~ 64;
 #X floatatom 493 61 5 0 0 0 - - -;
 #X text 536 62 < is this useful?;
+#X obj 173 60 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 11700 1;
+#X text 360 372 stuff to try: change out waveform type!;
 #X connect 0 0 2 0;
 #X connect 1 0 2 1;
 #X connect 3 0 4 0;
@@ -47,3 +50,5 @@ first....;
 #X connect 13 0 14 0;
 #X connect 21 0 22 0;
 #X connect 22 0 23 0;
+#X connect 25 0 9 1;
+#X connect 25 0 10 1;
