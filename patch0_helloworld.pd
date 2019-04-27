@@ -1,8 +1,4 @@
-#N canvas 879 509 434 227 10;
-#X obj 21 181 dac~ 1 2;
-#X obj 25 36 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 0 1;
-#X obj 21 69 mtof;
+#N canvas 110 188 434 227 10;
 #X text 154 103 connect up your oscillator!;
 #X obj 162 145 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
@@ -10,10 +6,16 @@
 #X text 154 86 task 1;
 #X text 243 170 < this is a broadcast message;
 #X text 185 144 < turn on your audio!;
-#X obj 21 141 *~ 1;
 #X text 110 96 ****;
 #X text 333 96 ****;
-#X obj 20 102 osc~ 220;
 #X text 21 8 v this is a slider CMD/CTL + J or V;
 #X text 173 35 < right click for properties;
-#X connect 4 0 5 0;
+#X obj 24 33 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X text 57 78 < frequency;
+#X obj 21 136 *~ 1;
+#X obj 21 102 osc~;
+#X obj 21 181 dac~ 1 2;
+#X floatatom 21 79 5 0 0 0 - - -;
+#X obj 21 58 mtof;
+#X connect 1 0 2 0;

@@ -1,12 +1,10 @@
 #N canvas 879 509 393 409 10;
 #X obj 36 47 adc~ 1;
-#X obj 36 89 *~;
-#X obj 36 129 delwrite~ buffer 1000;
 #X obj 37 248 *~;
 #X obj 38 213 delread~ buffer 50;
 #X obj 38 345 dac~ 1 2;
 #X obj 171 274 *~;
 #X text 72 90 < try enveloping the input with an lfo!;
 #X obj 172 239 delread~ buffer 150;
-#X connect 0 0 1 0;
-#X connect 1 0 2 0;
+#X obj 36 129 delwrite~ buffer 1000;
+#X obj 36 89 *~;

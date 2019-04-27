@@ -1,25 +1,37 @@
-#N canvas 879 509 433 416 10;
+#N canvas 619 339 433 416 10;
 #X obj 36 47 adc~ 1;
 #X obj 36 89 *~;
 #X obj 36 129 delwrite~ buffer 1000;
-#X obj 38 345 dac~ 1 2;
+#X obj 38 345 dac~ 1 2, f 33;
 #X text 72 90 < try enveloping the input with an lfo!;
 #X obj 104 45 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X obj 38 246 line~;
 #X obj 38 298 vd~ buffer;
 #X obj 38 270 *~ 1;
-#X msg 38 222 \$1 2000;
-#X obj 41 166 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 1600 1;
-#X obj 38 186 expr $f1 / 127 * 1000;
+#X obj 38 246 vline~;
+#X msg 38 208 100 1000 0 \, 250 2000 1000;
+#X obj 38 182 metro 2000;
+#X obj 39 159 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 233 302 vd~ buffer;
+#X obj 233 274 *~ 1;
+#X obj 233 250 vline~;
+#X obj 235 168 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 234 190 metro 1000;
+#X msg 233 212 250 750 0 \, 500 2000 1000;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 5 0 1 1;
-#X connect 6 0 8 0;
-#X connect 7 0 3 0;
-#X connect 7 0 3 1;
+#X connect 6 0 3 0;
+#X connect 7 0 6 0;
 #X connect 8 0 7 0;
-#X connect 9 0 6 0;
-#X connect 10 0 11 0;
-#X connect 11 0 9 0;
+#X connect 9 0 8 0;
+#X connect 10 0 9 0;
+#X connect 11 0 10 0;
+#X connect 12 0 3 1;
+#X connect 13 0 12 0;
+#X connect 14 0 13 0;
+#X connect 15 0 16 0;
+#X connect 16 0 17 0;
+#X connect 17 0 14 0;
