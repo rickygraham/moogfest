@@ -1,46 +1,47 @@
-#N canvas 170 96 628 449 10;
+#N canvas 680 120 628 449 10;
 #X obj 34 82 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 6200 1;
+-1 -1 0 1;
 #X obj 31 119 mtof;
 #X obj 76 278 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
 #X obj 73 301 / 127;
 #X obj 72 346 line~;
 #X obj 31 360 *~;
-#X obj 115 197 osc~;
-#X obj 115 242 *~;
-#X obj 162 180 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+#X obj 259 210 osc~;
+#X obj 259 255 *~;
+#X obj 306 193 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
 #X obj 31 175 +~;
-#X msg 72 322 \$1 50;
-#X obj 118 130 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+#X obj 262 143 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
-#X text 216 27 task 5: make your first abstraction;
+#X text 261 11 task 5: make your first abstraction;
 #X obj 31 29 inlet;
-#X obj 215 89 inlet;
-#X obj 317 102 inlet;
 #X obj 31 57 unpack f f;
 #X obj 31 412 outlet~;
-#X obj 115 150 expr $f1 / 127 * 100;
-#X obj 159 228 expr $f1 / 127 * 100;
-#X obj 31 254 osc~;
+#X obj 259 163 expr $f1 / 127 * 100;
+#X obj 303 241 expr $f1 / 127 * 100;
+#X msg 72 322 \$1 5;
+#X obj 31 221 square;
+#X obj 259 88 inlet;
+#X text 259 51 add a modulation stage (?) one control for both speed
+and amount;
 #X connect 0 0 1 0;
 #X connect 1 0 9 0;
 #X connect 2 0 3 0;
-#X connect 3 0 10 0;
+#X connect 3 0 17 0;
 #X connect 4 0 5 1;
-#X connect 5 0 17 0;
+#X connect 5 0 14 0;
 #X connect 6 0 7 0;
 #X connect 7 0 9 1;
-#X connect 8 0 19 0;
-#X connect 9 0 20 0;
-#X connect 10 0 4 0;
-#X connect 11 0 18 0;
-#X connect 13 0 16 0;
-#X connect 14 0 11 0;
-#X connect 15 0 8 0;
-#X connect 16 0 0 0;
-#X connect 16 1 2 0;
-#X connect 18 0 6 0;
-#X connect 19 0 7 1;
-#X connect 20 0 5 0;
+#X connect 8 0 16 0;
+#X connect 9 0 18 0;
+#X connect 10 0 15 0;
+#X connect 12 0 13 0;
+#X connect 13 0 0 0;
+#X connect 13 1 2 0;
+#X connect 15 0 6 0;
+#X connect 16 0 7 1;
+#X connect 17 0 4 0;
+#X connect 18 0 5 0;
+#X connect 19 0 10 0;
+#X connect 19 0 8 0;
